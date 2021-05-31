@@ -1,0 +1,27 @@
+version: '3'
+services:
+  #************Eureka***************
+  eureka:
+    container_name: eureka_container
+    build:
+      context: ../Eureka
+      dockerfile: Dockerfile
+    ports:
+      - 8761:8761
+    networks:
+      - asmd_net
+#************email***************
+  email:
+    container_name: email_container
+    build:
+      context: ../email-service
+      dockerfile: Dockerfile
+    ports:
+      - 8081:8081
+    networks:
+      - asmd_net
+    depends_on:
+      - eureka  
+networks:
+  asmd_net:
+    driver: bridge

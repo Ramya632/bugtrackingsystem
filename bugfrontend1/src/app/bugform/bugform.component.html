@@ -1,0 +1,31 @@
+<div class="col-md-6 offset-md-3">
+    <h3> Create Bug </h3>
+    <form (ngSubmit) = "onSubmit()">
+    
+        <div class="form-group">
+            <label> Email Address</label>
+            <input type="text" class ="form-control" id = "emailAddress"
+                [(ngModel)] = "bug.emailAddress" name = "emailAddress">
+        </div>
+    
+        <div class="form-group">
+            <label> Priority</label>
+            <input type="text" class ="form-control" id = "priority"
+                [(ngModel)] = "bug.priority" name = "priority">
+        </div>
+    
+        <div class="form-group">
+            <label>Status</label>
+            <input type="text" class ="form-control" id = "status"
+                [(ngModel)] = "bug.status" name = "status">
+        </div>
+        <div class="form-group">
+            <label>AttachedFiles</label>
+            <input type="text" class ="form-control" id = "attachedfiles"
+                [(ngModel)] = "bug.attachedfiles" name = "attachedfiles">
+        </div>
+    
+        <button class = "btn btn-success" type ="submit">Submit</button>
+    
+    </form>
+    </div> 
