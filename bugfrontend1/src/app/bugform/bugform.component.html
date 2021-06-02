@@ -2,10 +2,11 @@
     <h3> Create Bug </h3>
     <form (ngSubmit) = "onSubmit()">
     
-        <div class="form-group">
-            <label> Email Address</label>
-            <input type="text" class ="form-control" id = "emailAddress"
-                [(ngModel)] = "bug.emailAddress" name = "emailAddress">
+       <div class="form-group"[class.has-error]="emailAddressControl.invalid && emailAddressControl.touched">
+            <label for ="emailAddress" class="control-label"> Email Address</label>
+            <input required type="text" class ="form-control"  id = "emailAddress"
+                [(ngModel)] = "bug.emailAddress" name = "emailAddress" #emailAddressControl="ngModel">
+                <span class="help-block" *ngIf="emailAddressControl.invalid && emailAddressControl.touched">Email Address is required</span>
         </div>
     
         <div class="form-group">
